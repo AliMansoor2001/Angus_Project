@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angus Cuisine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Custom styles for full-screen sidebar on mobile */
+        .navbar-collapse {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 1050;
+            transform: translateX(-100%); /* Hidden off-screen by default */
+            transition: transform 0.3s ease;
+        }
+
+        /* Slide-in effect when menu is open */
+        .navbar-collapse.show {
+            transform: translateX(0); /* Slide in from left */
+        }
+
+        /* Toggle button positioned at top-left */
+        .navbar-toggler {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1100;
+        }
+
+        /* Centering menu items in the sidebar */
+        .navbar-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .nav-link {
+            font-size: 1.5rem;
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Hide sidebar-style navbar on larger screens */
+        @media (min-width: 992px) {
+            .navbar-collapse {
+                position: static;
+                transform: none;
+                height: auto;
+                background-color: transparent;
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .navbar-nav {
+                flex-direction: row;
+                height: auto;
+            }
+
+            .nav-link {
+                width: auto;
+                text-align: left;
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+            }
+
+            /* Hide the toggle button on larger screens */
+            .navbar-toggler {
+                display: none;
+            }
+        }
+
+        /* Add padding for mobile view */
+        @media (max-width: 576px) {
+            .contact-column {
+                width: 90%;
+                padding: 0 1rem;
+            }
+        }
+    </style>
+    
+  </head>
+  <body>
+    <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="btn d-flex align-items-center justify-content-end">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-header d-flex flex-column">
+              <h5 class="modal-title text-brown font-style fs-larger" id="welcomeModalLabel">OPEN 7 DAYS A WEEK</h5>
+              <button type="submit" class="btn bg-brown btn-hover rounded-0 text-light font-style box-shadow mb-3"  style="width: 350px; height: 40px;">BOOK NOW</button>
+              </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="bg-image-header">
+
+    <nav class="navbar navbar-expand-lg bg-body-light navbar-custom fixed-top">
+        <div class="container-fluid mb-2 mt-2">
+            <div class="d-block d-lg-none text-center w-100">
+                <!-- Phone number for mobile view -->
+                <a class="nav-link fs-5 font-style" href="tel:01416112678">0141 611 2678</a>
+                <!-- Company name for mobile view -->
+                <a class="navbar-brand text-brown styling" href="#">ANGUS CUISINE</a>
+            </div>
+          <a class="navbar-brand text-brown styling d-none d-lg-block" href="#">ANGUS CUISINE</a>
+          <!-- Toggle button positioned at the top-left corner (only visible on mobile) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse mx-auto" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link font-style active" aria-current="page" href="#">Home</a>
+                <a class="nav-link font-style" href="Menu&Price.html">Prices & Menu</a>
+                <a class="nav-link font-style" href="About us.html">About Us</a>
+                <a class="nav-link font-style" href="#connect">Contact Us</a>
+                <a class="nav-link font-style" href="opening hours.html">Opening Hours</a>
+            </div>
+
+            
+            <div class="navbar-nav-2 ms-auto mr-4 d-none d-lg-block">
+                <a class="nav-link fs-4" href="#">0141 611 2678</a>
+            </div>
+          </div>
+        </div>
+      </nav>  
+
+      <div class="container d-flex flex-row justify-content-end align-items-center" style="height: 85vh;">
+        <!-- Circular Announcement -->
+        <div class="border border-primary bg-brown border-0 rounded-circle d-flex flex-column justify-content-center align-items-center p-4" style="width: 350px; height: 350px;">
+          <h4 class="text-center text-white fs-1 mb-3 text-shadow-light font-style">BOOK NOW!!</h4>
+          <a href="#" class="btn btn-light px-2 py-3 rounded-0 btn-shadow-dark" style="width: 200px">RESERVE NOW</a>
+        </div>
+      </div>
+      </div>
+      <div class="bg-image-header2">
+        <h1 class="h1 text-light text-center font-style fs-larger pt-5">REVIEWS</h1><br>
+
+        <div class="google-review d-flex justify-content-center align-items-center pt-4">
+            <a href="#"><img src="google-logo.jpg" alt="..." class="logo img-fluid mx-3"></a>
+            <h1 class="h1 text-light fs-larger font-style mx-3">4.0</h1>
+            <div class="d-flex flex-column mx-3">
+                <h3 class="h3 text-light fs-4">Angus Cuisine</h3>
+                <p class="stars text-warning fs-2">★★★★☆</p>
+                <h3 class="h3 text-light fs-4">798 Reviews</h3>
+            </div>
+            </div>
+   
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                </div>
+            
+                <div class="carousel-inner">
+                    <!-- Review 1 -->
+                    <div class="carousel-item active">
+                        <div class="container d-flex justify-content-center align-items-center my-5">
+                            <div class="col-md-4 bg-light p-4" style="width: 350px;">
+                                <div class="review-card text-center">
+                                    <img src="rey.png" alt="User DP">
+                                    <p class="stars text-warning fs-2">★★★★★</p>
+                                    <p>This customer did not write a review.</p>
+                                    <div class="section d-flex justify-content-center align-items-center fs-7">
+                                        <a href="#"><img src="google-logo.jpg" alt="Google logo" class="logo-small img-fluid mx-3"></a>
+                                        <p class="text-muted fs-smallest"><b>Rey Jackson</b> - September 12, 2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Review 2 -->
+                    <div class="carousel-item">
+                        <div class="container d-flex justify-content-center align-items-center my-5">
+                            <div class="col-md-4 bg-light p-4" style="width: 350px;">
+                                <div class="review-card text-center">
+                                    <img src="ahha.png" alt="User DP">
+                                    <p class="stars text-warning fs-2">★★★★★</p>
+                                    <p>This customer did not write a review.</p>
+                                    <div class="section d-flex justify-content-center align-items-center fs-7">
+                                        <a href="#"><img src="google-logo.jpg" alt="Google logo" class="logo-small img-fluid mx-3"></a>
+                                        <p class="text-muted fs-smallest"><b>Анна Янчишина</b> - 03/11/2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Review 3 -->
+                    <div class="carousel-item">
+                        <div class="container d-flex justify-content-center align-items-center my-5">
+                            <div class="col-md-4 bg-light p-4" style="width: 350px;">
+                                <div class="review-card text-center">
+                                    <img src="carly.png" alt="User DP">
+                                    <p class="stars text-warning fs-2">★★★★★</p>
+                                    <p>This customer did not write a review.</p>
+                                    <div class="section d-flex justify-content-center align-items-center fs-7">
+                                        <a href="#"><img src="google-logo.jpg" alt="Google logo" class="logo-small img-fluid mx-3"></a>
+                                        <p class="text-muted fs-smallest"><b>Carly Markantonatos</b> - 30/10/2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Review 4 -->
+                    <div class="carousel-item">
+                        <div class="container d-flex justify-content-center align-items-center my-5">
+                            <div class="col-md-4 bg-light p-4" style="width: 350px;">
+                                <div class="review-card text-center">
+                                    <img src="review-4.png" alt="User DP">
+                                    <p class="stars text-warning fs-2">★★★★★</p>
+                                    <p>"Great value for money"</p>
+                                    <div class="section d-flex justify-content-center align-items-center fs-7">
+                                        <a href="#"><img src="google-logo.jpg" alt="Google logo" class="logo-small img-fluid mx-3"></a>
+                                        <p class="text-muted fs-smallest"><b>Neil Downie</b> - 29/10/2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Review 5 -->
+                    <div class="carousel-item">
+                        <div class="container d-flex justify-content-center align-items-center my-5">
+                            <div class="col-md-4 bg-light p-4" style="width: 350px;">
+                                <div class="review-card text-center">
+                                    <img src="review-5.png" alt="User DP">
+                                    <p class="stars text-warning fs-2">★★★★★</p>
+                                    <p>This customer did not write a review.</p>
+                                    <div class="section d-flex justify-content-center align-items-center fs-7">
+                                        <a href="#"><img src="google-logo.jpg" alt="Google logo" class="logo-small img-fluid mx-3"></a>
+                                        <p class="text-muted fs-smallest"><b>Adriana Audady</b> - 26/10/2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Review 6 -->
+                    <div class="carousel-item">
+                        <div class="container d-flex justify-content-center align-items-center my-5">
+                            <div class="col-md-4 bg-light p-4" style="width: 350px;">
+                                <div class="review-card text-center">
+                                    <img src="review-6.png" alt="User DP">
+                                    <p class="stars text-warning fs-2">★★★★★</p>
+                                    <p>"Absolutely hands down the tastiest buffet we've been to. Went on a S..."</p>
+                                    <a class="text-brown fs-5 font-style text-deco-none" href="#">Read full review</a>
+                                    <div class="section d-flex justify-content-center align-items-center fs-7">
+                                        <a href="#"><img src="google-logo.jpg" alt="Google logo" class="logo-small img-fluid mx-3"></a>
+                                        <p class="text-muted fs-smallest"><b>David Walker</b> - 22/10/2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Review 7 -->
+                    <div class="carousel-item">
+                        <div class="container d-flex justify-content-center align-items-center my-5">
+                            <div class="col-md-4 bg-light p-4" style="width: 350px;">
+                                <div class="review-card text-center">
+                                    <img src="review-7.png" alt="User DP">
+                                    <p class="stars text-warning fs-2">★★★★★</p>
+                                    <p>"Great food, seems expensive but for the quality of food and servic..."</p>
+                                    <a class="text-brown fs-5 font-style text-deco-none" href="#">Read full review</a>
+                                    <div class="section d-flex justify-content-center align-items-center fs-7">
+                                        <a href="#"><img src="google-logo.jpg" alt="Google logo" class="logo-small img-fluid mx-3"></a>
+                                        <p class="text-muted fs-smallest"><b>James Macneil</b> - 20/10/2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Review 8 -->
+                    <div class="carousel-item">
+                        <div class="container d-flex justify-content-center align-items-center my-5">
+                            <div class="col-md-4 bg-light p-4" style="width: 350px;">
+                                <div class="review-card text-center">
+                                    <img src="review-9.png" alt="User DP">
+                                    <p class="stars text-warning fs-2">★★★★★</p>
+                                    <p>"5 star buffet I had abt 10 plates of food if you go there you need to t..."</p>
+                                    <a class="text-brown fs-5 font-style text-deco-none" href="#">Read full review</a>
+                                    <div class="section d-flex justify-content-center align-items-center fs-7">
+                                        <a href="#"><img src="google-logo.jpg" alt="Google logo" class="logo-small img-fluid mx-3"></a>
+                                        <p class="text-muted fs-smallest"><b>Paul Norm</b> - 14/10/2024</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="carousel-item">
+                    <div class="container d-flex justify-content-center align-items-center my-5">
+                        <div class="row">
+                          <!-- Review 9 -->
+                          <div class="col-md-4 bg-light p-4" style="width: 350px;">
+                            <div class="review-card text-center">
+                              <img src="review-8.png" alt="User DP">
+                              <p class="stars text-warning fs-2">★★★★★</p>
+                              <p>This customer did not write a review.</p><br><br>
+                              <div class="section d-flex justify-content-center align-items-center fs-7">
+                                <a href="#"><img src="google-logo.jpg" alt="..." class="logo-small img-fluid mx-3"></a>
+                                <p class="text-muted fs-smallest"><b>Lorelei Raducanu</b> - 12/10/2024</p>
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+    
+            
+                <!-- Carousel controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div><br><br><br><br><br><br>
+
+      <div class="container d-flex flex-column justify-content-center align-items-center my-4" id="social">
+        <h1 class="h1 font-style text-shadow-dark">Social</h1><br>
+        <a href="#"><img class="rounded-circle" src="fb-logo.jpg" style="width: 70px; height: 70px;" alt="..."></a>
+      </div><br><br>
+
+      <div class="row featurette my-4 mx-4 d-flex align-items-end justify-content-center">
+
+        <div class="col-md-5">
+            <img src="gift.jpg" alt="pack of hadith" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="700" height="700">
+          </div>
+
+        <div class="col-md-7">
+          <h2 class="featurette-heading font-style fs-larger">Gift Vouchers</h2><br>
+          <p class="lead fs-2">Send a gift voucher  to friends and family or buy it now for your future use. </p>
+        </div>
+        
+      </div>
+      <br><br><br>
+
+      <div class="container my-4">
+        <div class="row">
+            <h1 class="h1 font-style text-shadow-dark mb-4 text-center" id="connect">VISIT US</h1>
+            
+            <!-- Contact Section -->
+            <div class="contact row">
+                <!-- Contact Form -->
+                <div class="form col-md-6 mb-4">
+                    <h3 class="h3 font-style fs-4 mb-2">CONTACT US</h3>
+                    <div class="form-floating mb-4 mt-4">
+                        <input type="text" class="form-control bg-gray" id="floatingInput" placeholder="name">
+                        <label for="floatingInput">Name</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="number" class="form-control bg-gray" id="floatingPassword" placeholder="Phone">
+                        <label for="floatingPassword">Phone</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="email" class="form-control bg-gray" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <textarea class="form-control bg-gray" placeholder="How can we serve you?" id="floatingTextarea" style="height: 150px;"></textarea>
+                        <label for="floatingTextarea">How can we serve you?</label>
+                    </div>
+                    <div class="col-auto">
+                        <button type="submit" class="btn bg-brown btn-hover rounded-0 text-light font-style box-shadow mb-3" style="width: 100%; height: 70px;">Send</button>
+                    </div>
+                    <p class="lead fs-smallest text-center">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
+                </div>
+    
+                <!-- Info Section -->
+                <div class="info col-md-6">
+                    <h3 class="h3 font-style mb-2 fs-4">SPECIAL REQUESTS?</h3>
+                    <p class="lead">Do you have dietary concerns? Questions about an upcoming event? Drop us a line, and we'll get back to you soon!</p>
+                    
+                    <h3 class="h3 font-style mb-2 fs-4">ANGUS CUISINE</h3>
+                    <p class="lead">South Tay Square, Dundee, Angus, DD1 1PB</p>
+                    <p class="lead">0141 611 2678</p>
+                    <p class="lead">clearbusinessbyadrian@gmail.com</p>
+    
+                    <h3 class="h3 font-style mb-2 fs-4">OPENING HOURS</h3>
+                    <p class="lead">1:00 PM to 11:00 PM (7 days a week)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <div class="container-fluid">
+        <div class="map-section margin-left-right rounded-0">
+          <!-- Google Map Embed -->
+          <div class="col-auto z-index">
+            <button type="submit" class="btn bg-brown btn-hover rounded-0 text-light font-style box-shadow mb-3"  style="width: 200px; height: 40px;">Get Directions</button>
+          </div>
+          <iframe
+            class="map-frame img-fluid"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.1612788444927!2d-122.41941508468172!3d37.77492977975969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808581540bdcb81d%3A0x6c48f2d0f1d9c631!2sGolden%20Gate%20Bridge!5e0!3m2!1sen!2sus!4v1618868858883!5m2!1sen!2sus"
+            allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <footer class="py-5 text-center text-light bg-brown d-flex flex-row justify-content-evenly ">
+        <p class="lead text-left fs-6 ps-4">Copyright © 2023 Yamm Buffet - All Rights Reserved.</p>
+        <a href="#" class="lead text-deco-none text-light fs-6 font-style">Privacy Policy</a>
+        <p class="lead text-right fs-6">Powered by GoDaddy Website Builder</p>
+</footer>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+ <script>
+    // Automatically open the modal when the page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      var myModal = new bootstrap.Modal(document.getElementById('welcomeModal'), {});
+      myModal.show();
+    });
+
+    document.addEventListener('click',function(){ 
+        ('.navbar-toggler').collapse('hide');})
+  </script> 
+  </body>
+</html>
